@@ -15,78 +15,179 @@ Q: In an HTML element, what does the id attribute do? The class attribute?
 A: An ID attribute should be assigned to only one element. It allows us to create a very specific attribute identifier for that element and thus, specific CSS customization.
 A class attribute can be assigned to more than one element. Any CSS styling that affects one class attribute will affect all members of that class.
 
-What is an inline element? A block element? What are some examples of each?
+Q: What is an inline element? A block element? What are some examples of each?
+A: Inline elements do not break-up the flow of an HTML document; they can sit within the same line (example - <span>, <a>, <img>, <strong>).
+A block element starts on a new line and takes up the whole width of their containing element (example - <p>, <div>, headings, <table>).
 
-How do semantic HTML elements help developers markup content?
+Q: How do semantic HTML elements help developers markup content?
+A: Semantic HTML elements are elements that describe the meaning/purpose of the tag for the developer and browser.
+Examples - <form>, <table>, <article>, <header>, <footer>, <aside>, <summary>, etc. 
 
 Usage of specific elements:
+    - Q: How are div elements used? How do they differ from elements like article or p?
+        A: <div> elements are a generic block element that are not meant for semantically-specific purposes like in the case of <article> or <p>.
 
-How are div elements used? How do they differ from elements like article or p?
-
-How are span elements used? How do they differ from elements like a or b?
+    - Q: How are span elements used? How do they differ from elements like a or b?
+        A: <span> elements are a generic inline element. 
 
 Creating forms in HTML:
 
-In form elements, what is the method attribute used to specify? The action attribute?
+    - Q: In form elements, what is the method attribute used to specify? The action attribute?
+        A: The method attribute specifies the HTTP method to be used when submitting the form data (i.e. <form action="/action" method="get").
+           The action attribute defines what should occur when the form is submitted. 
 
-List the various types of input tags. How do you set an input tag’s type?
+    - Q: List the various types of input tags. How do you set an input tag’s type?
+        A: To set an input tag: <input type=" ">. 
+           Examples - <input type="button">, <input type="checkbox">, <input type="radio">, <input type="text">, <input type="password">, etc. 
 
-For an input tag, what does the name attribute do?
+    -Q: For an input tag, what does the name attribute do?
+        A: The name attribute specifies the name of the form. 
 
-CSS
-In CSS, what is a selector? A property? A value?
+Section 2: CSS
+---
 
-What is the difference between combining selectors and descendent selectors?
+Q: In CSS, what is a selector? A property? A value?
+A: A selector identifies the tag and attribute where a CSS rule should apply. 
+A property is a field that you can set (color, font style, etc.) to customize an HTML element. 
+A value is the value for the property. 
 
-For block elements, what attributes are applied to all four sides?
+Q: What is the difference between combining selectors and descendent selectors?
+A: Combining selectors utilize dot notation (.); descendent selectors utilize spaces and +. 
 
-What is the Order of Precedence in CSS?
+A: For block elements, what attributes are applied to all four sides?
+B: Border, padding, and margin.
 
-Flask and Jinja2
-What is the request object in Flask? What can you use it for?
+A: What is the Order of Precedence in CSS?
+B: Rules with the most specific selector will win. In all other cases, more recently declared rules will win. 
 
-In Flask, how do you access form values for a POST request? How about for a GET request?
+Section 3: Flask and Jinja2
+---
 
-What is Jinja? What does the function render_template do?
+Q: What is the request object in Flask? What can you use it for?
+A: The request object in Flask is a dictionary object with the key-value pair of the form parameters. 
+We can use this to access form data and redirect it into HTML templates, store it in our data management systems, etc.
+
+Q: In Flask, how do you access form values for a POST request? How about for a GET request?
+A: GET: request.args.get()
+   POST: request.form.get()
+
+Q: What is Jinja? What does the function render_template do?
+A: Jinja is a popular template system for Python that is used by Flask. 
+The function render_template() returns an HTML template as a String so it is readable to the browser. 
 
 Jinja syntax to know
+    - Q: For-loops
+    - A: 
+            {% for VAR in LIST %}
 
-For-loops
+            ...
+            
+            {% endfor %}
 
-If-statements
+    - Q: If-statements
+    - A:    
+            {% if %}
 
-Showing text with Jinja
+            {% elif %}
 
-Setting HTML attributes using Jinja
+            {% else %}
 
-Template inheritance (using a base.html to create consistency)
+            {% endif %}
 
-How the Web Works
-When you type a URL into a web browser, what happens?
+Q: Showing text with Jinja
+A: 
+    {{ VAR }}
 
-Be able to explain this in your own words, hitting each main concept from the lecture.
+Q: Setting HTML attributes using Jinja
+A: 
+    <div class={ myString }>
 
-What are the five main components of a URL?
+Q: Template inheritance (using a base.html to create consistency)
+A: Anything contained in the folowing block statement will be inherited:
 
-What is the difference between a GET request and a POST request?
+    {% block BLOCKNAME %}
 
-Cookies and Sessions
-What is a cookie? What is a session? How are the two different?
+    {% endblock %}
 
-APIs and Requests Library
-What is an API? What does API stand for?
+    To extend a template:
 
-What are some examples of web-based APIs?
+        {% extends "nameoftemplate.html" %}
 
-What is an API endpoint?
 
-What are the core tenets of REST in the context of APIs?
+Section 4: How the Web Works
+---
 
-How can you keep your API access tokens out of git? What should you do if you accidentally add your API tokens to git?
+Q: When you type a URL into a web browser, what happens? Be able to explain this in your own words, hitting each main concept from the lecture.
+A: The client browser sends a request to the Domain Name Service (DNS) to look up the IP address of the hostname. 
+The DNS looks-up the IP address for the hostname and then sends the address back to the client browswer.
+The client browser sends the request to the server.
+The server responds to the request, sending back the requested HTML page. 
+The client browser parses the HTML page and then sends asynchronous requests to the server based on what it finds; the server responds in-kind, asynchronously.
 
-Why is it bad to push your API tokens to git?
+Q: What are the five main components of a URL?
+A: 
+    Example: http://placemelon.com/some/page.html 
 
-Testing
-What are doctests? How do you create and run them?
+    1. Protocol - The conventions and ways for the client browser and server to communicate.
+        Examples: http, https, ftp
+    2. Hostname - The "human-readable" version of the IP address. We rely on the DNS to resolve this into the IP address.
+        Example: placemelon.com
+    3. Port - Identifies the senders/receivers of the information and the particular application needed on the devices. 
+    4. Resource - The requested resource that enables the user to use the "web server program" on the server.
+        Example: some/page.html
+    5. Optional Query String - Query strings are key-value pairs and are used to send info to the server in a GET request. 
+        For POST requests, data is sent as part of the request body.
 
-What is the difference between a unit test and an integration test?
+Q: What is the difference between a GET request and a POST request?
+A: GET requests display the query string in the URL, POST requests do not. 
+We use GET requests for actions without any consequences.
+POST requests provide better security. 
+
+Section 5: Cookies and Sessions
+---
+
+Q: What is a cookie? What is a session? How are the two different?
+A: A cookie is a set of key-value pairs that the server creates and communicates to the browser to remember in order to "save a state" of the browser. 
+When the browser receives the cookies, the browser creates a .txt file on the client-side to remember the requested information.
+Each time the browser makes a request to the server, the browser sends over the .txt file.
+
+    A session is a global variable stored on the server. Each session is assigned a unique ID to retrive stored values. 
+Whenever a session is created, a cookie containing the unique session ID is stored on the user's computer and sent to the server everytime a server request is made. 
+The session values are deleted after the browser is terminated. 
+
+Section 6: APIs and Requests Library
+---
+
+Q: What is an API? What does API stand for?
+A: API stands for Application Programming Interface. 
+It is a way for applications to communicate with one another and access data and functionality. 
+
+Q: What are some examples of web-based APIs?
+A: iTunes, Ticketmaster, GoogleMaps, etc. 
+
+Q: What is an API endpoint?
+A: An API endpoint is a route for the developer to access different features of the API. 
+The endpoint is always appended to the end of the base URL of the API, similar to a route. 
+
+Q: What are the core tenets of REST in the context of APIs?
+A: According to REST, APIs must abide by the following standards:
+
+    - All URLs must be uniform and meaningful
+    - HTTP(S) is the protocol used to access the API
+    - Each API request is independent
+    - Client ands erver are independent of each other (and can be in different languages)
+
+Q: How can you keep your API access tokens out of git? What should you do if you accidentally add your API tokens to git?
+A: Use a secrets.sh file and .gitignore file to avoid tracking your API token key to Git. You should complete a hard reset if you accidentally add this info.
+
+Q: Why is it bad to push your API tokens to git?
+A: Anyone can hack into your application.
+
+Section 7: Testing
+---
+
+Q: What are doctests? How do you create and run them?
+A: Doctests are tests written within a function's docstrings. They instruct the program what type of result the computation should expect.
+
+Q: What is the difference between a unit test and an integration test?
+A: A unit test tests individual modules or function of an application in solation. An integration test combined different individual units of a program and tests them as a group.
