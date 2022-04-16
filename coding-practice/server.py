@@ -37,7 +37,6 @@ def show_results():
     """Show resulting message."""
 
     message = request.args.get("message")
-    print(message)
 
     return render_template('results.html', message=message)
 
