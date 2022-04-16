@@ -1,0 +1,92 @@
+Section 1: HTML
+---
+
+Q: What are HTML elements?
+A: The fundamental building blocks of an HTML page are known as an "HTML element". 
+Some elements require a closing tag and others are self-closing. 
+They can also be set to a specific attribute.
+
+Q: What are HTML element attributes? What are some examples of HTML attributes and what do they do?
+A: Attributes enable an HTML element to be configured to have more customizability and/or functionality. 
+For example, an HTML element can be assigned a particular class or ID element to help organize our code but to also enable CSS customization.
+An HTML element can also have particular type attributes to configure form functionality. 
+
+Q: In an HTML element, what does the id attribute do? The class attribute?
+A: An ID attribute should be assigned to only one element. It allows us to create a very specific attribute identifier for that element and thus, specific CSS customization.
+A class attribute can be assigned to more than one element. Any CSS styling that affects one class attribute will affect all members of that class.
+
+What is an inline element? A block element? What are some examples of each?
+
+How do semantic HTML elements help developers markup content?
+
+Usage of specific elements:
+
+How are div elements used? How do they differ from elements like article or p?
+
+How are span elements used? How do they differ from elements like a or b?
+
+Creating forms in HTML:
+
+In form elements, what is the method attribute used to specify? The action attribute?
+
+List the various types of input tags. How do you set an input tag’s type?
+
+For an input tag, what does the name attribute do?
+
+CSS
+In CSS, what is a selector? A property? A value?
+
+What is the difference between combining selectors and descendent selectors?
+
+For block elements, what attributes are applied to all four sides?
+
+What is the Order of Precedence in CSS?
+
+Flask and Jinja2
+What is the request object in Flask? What can you use it for?
+
+In Flask, how do you access form values for a POST request? How about for a GET request?
+
+What is Jinja? What does the function render_template do?
+
+Jinja syntax to know
+
+For-loops
+
+If-statements
+
+Showing text with Jinja
+
+Setting HTML attributes using Jinja
+
+Template inheritance (using a base.html to create consistency)
+
+How the Web Works
+When you type a URL into a web browser, what happens?
+
+Be able to explain this in your own words, hitting each main concept from the lecture.
+
+What are the five main components of a URL?
+
+What is the difference between a GET request and a POST request?
+
+Cookies and Sessions
+What is a cookie? What is a session? How are the two different?
+
+APIs and Requests Library
+What is an API? What does API stand for?
+
+What are some examples of web-based APIs?
+
+What is an API endpoint?
+
+What are the core tenets of REST in the context of APIs?
+
+How can you keep your API access tokens out of git? What should you do if you accidentally add your API tokens to git?
+
+Why is it bad to push your API tokens to git?
+
+Testing
+What are doctests? How do you create and run them?
+
+What is the difference between a unit test and an integration test?
