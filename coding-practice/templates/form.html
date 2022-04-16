@@ -2,13 +2,17 @@
 
 {% block content %}
 
-<p>#3) Fix this form so it submits to the route /results.</p>
-
 <p>What kind of message would you like?</p>
-<form>
-  <input type="checkbox" value="cheery"> Cheery<br>
-  <input type="checkbox" value="honest"> Honest<br>
-  <input type="checkbox" value="dreary"> Dreary<br>
+<form action ="/results">
+  <!-- <input type="checkbox" value="cheery"> Cheery <br>
+  <input type="checkbox" value="honest"> Honest <br>
+  <input type="checkbox" value="dreary"> Dreary <br><br> -->
+
+  <input type="checkbox" name="message" value="cheery"> Cheery <br>
+  <input type="checkbox" name="message" value="honest"> Honest <br>
+  <input type="checkbox" name="message" value="dreary"> Dreary <br><br>
+
+  <input type="submit">
 </form>
 
 {% endblock %}

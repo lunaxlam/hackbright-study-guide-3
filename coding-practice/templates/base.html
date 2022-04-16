@@ -5,7 +5,7 @@
 </head>
 <body>
   {% if session.get('name') %}
-      <h2>Hello, {{ session.get('name') }}</h2>
+      <h2>Hello, {{ session.get('name') }}!</h2>
   {% else %}
       <h2>Welcome. I don't know your name</h2>
   {% endif %}

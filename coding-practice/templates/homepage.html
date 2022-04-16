@@ -2,8 +2,12 @@
 
 {% block content %}
 
-Welcome to the Site
+<h3> Welcome to the Site.</h3>
 
-<p>#2) Create a form on this page that asks for the user's name.</p>
+<p>What is your name?</p>
+<form action ="/save-name">
+    <input type="text" name="name"><br><br>
+    <input type="submit">
+</form>
 
 {% endblock %}

@@ -5,8 +5,20 @@
 <h1>Results</h1>
 
 <p>
-    #4) Finish the route called /results. Then, display appropriate results on 
-    this page.
+
+ {% if message == "cheery" %}
+
+    Here is your cheery message! 
+
+ {% elif message == "honest" %}
+
+    Here is your honest message! 
+
+ {% else %}
+
+    Here is your dreary message! 
+
+ {% endif %}
 </p>
 
 {% endblock %}
